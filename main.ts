@@ -1,4 +1,4 @@
-import { Plugin } from 'obsidian';
+import { Plugin, MarkdownRenderer } from 'obsidian';
 
 const parseMonths = (input) => {
   let result = [];
@@ -64,14 +64,15 @@ export default class PlantCalendarPlugin extends Plugin {
 
       let monthShown = false;
       rows.forEach(row => {
-        if (!row.includes(':')) {
+        if (!row.match(':[ .,0-9-]*$')) {
           // add some spaces before next plant
           if (monthShown) {
             table.createEl('tr', { cls: 'spacer' } ).createEl('td', { attr: { colspan: '25' } });
           }
 
           let tableRow = table.createEl('tr');
-          tableRow.createEl('th', { text: row });
+          let labelCell = tableRow.createEl('th');
+          MarkdownRenderer.renderMarkdown(row, labelCell, '', this);
 
           // show months on first column only
           if (!monthShown) {
@@ -84,7 +85,6 @@ export default class PlantCalendarPlugin extends Plugin {
           let [ label, highlights ] = row.split(':');
           let tableRow = table.createEl('tr', { cls: label.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, "-") });
           highlights = parseMonths(highlights.replace(/ /g, ''));
-          console.log('highlights', highlights);
           tableRow.createEl('td', { text: label });
 
           for (let i=0; i<24; i++) {
