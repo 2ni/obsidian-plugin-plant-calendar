@@ -12,6 +12,10 @@ table.plantcalendar {
     font-size: .8rem;
   }
 
+  th p {
+    margin: 0;
+  }
+
   th:first-child,
   td:first-child {
     font-size: .8rem;
