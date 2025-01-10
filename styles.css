@@ -56,8 +56,18 @@ table.plantcalendar {
     color: #52AE33;
   }
 
+  tr.direktsaat td:not(:empty):not(:first-child) {
+    background-color: #009DC5;
+    color: #009DC5;
+  }
+
   tr.ernte td:not(:empty):not(:first-child) {
     background-color: #A877B2;
     color: #A877B2;
+  }
+
+  tr.blute td:not(:empty):not(:first-child) {
+    background-color: #f42c2c;
+    color: #f42c2c;
   }
 }

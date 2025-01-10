@@ -70,6 +70,7 @@ export default class PlantCalendarPlugin extends Plugin {
             table.createEl('tr', { cls: 'spacer' } ).createEl('td', { attr: { colspan: '25' } });
           }
 
+          // plant name in variable row
           let tableRow = table.createEl('tr');
           let labelCell = tableRow.createEl('th');
           MarkdownRenderer.renderMarkdown(row, labelCell, '', this);
