@@ -32,3 +32,11 @@ table.plantcalendar {
   }
 }
 ````
+
+## Command
+There is a command in the palette to add a calendar in edit mode. Search for "plantcalendar"
+
+## Installation
+1. git clone in your .obsidian/plugins
+2. npm run dev to generate the main.js
+3. activate the plugin in "Community plugins"
