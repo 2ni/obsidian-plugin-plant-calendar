@@ -1,0 +1,59 @@
+table.plantcalendar {
+  th, td {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    min-width: 1.5rem;
+  }
+
+  th {
+    border: 0;
+    font-weight: normal;
+    font-size: .8rem;
+  }
+
+  th:first-child,
+  td:first-child {
+    font-size: .8rem;
+    text-align: right;
+    padding-right: .5rem;
+    border: 0;
+  }
+
+  th:first-child {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  td:nth-child(2n) {
+    border-right: 0;
+  }
+
+  td:nth-child(2n-1) {
+    border-left: 0;
+  }
+
+  tr.spacer td {
+    height: .8rem;
+  }
+
+  tr.anzucht td:not(:empty):not(:first-child) {
+    background-color: #F39200;
+    color: #F39200;
+  }
+
+  tr.gewachshaus td:not(:empty):not(:first-child) {
+    background-color: #008237;
+    color: #008237;
+  }
+
+  tr.freiland td:not(:empty):not(:first-child) {
+    background-color: #52AE33;
+    color: #52AE33;
+  }
+
+  tr.ernte td:not(:empty):not(:first-child) {
+    background-color: #A877B2;
+    color: #A877B2;
+  }
+}

@@ -1,0 +1,10 @@
+{
+	"id": "plantcalendar-plugin",
+	"name": "Plantcalendar Plugin",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Simple Calendar by month, eg for plants",
+	"author": "Denis De Mesmaeker",
+	"authorUrl": "https://github.com/jmouka",
+	"isDesktopOnly": false
+}
