@@ -63,6 +63,7 @@ export default class PlantCalendarPlugin extends Plugin {
       const table = el.createEl('table', { cls: 'plantcalendar' });
 
       let monthShown = false;
+      let rowCount = 1;
       rows.forEach(row => {
         if (!row.match(':[ .,0-9-]*$')) {
           // add some spaces before next plant
@@ -76,7 +77,7 @@ export default class PlantCalendarPlugin extends Plugin {
           MarkdownRenderer.renderMarkdown(row, labelCell, '', this);
 
           // show months on first column only
-          if (!monthShown) {
+          if (!monthShown || rowCount++ % 6 == 0) {
             monthShown = true;
             for (let i=0; i<12; i++) {
               tableRow.createEl('th', { text: month[i], attr: { colspan: '2' } });
