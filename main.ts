@@ -90,7 +90,7 @@ export default class PlantCalendarPlugin extends Plugin {
           tableRow.createEl('td', { text: label });
 
           for (let i=0; i<24; i++) {
-            tableRow.createEl('td', { text: highlights.includes(i+1) ? 'x' : '', cls: highlights.includes(i+1) ? 'highlight' : '' });
+            tableRow.createEl('td', { attr: { title: month[Math.floor(i / 2)] }, text: highlights.includes(i+1) ? 'x' : '', cls: highlights.includes(i+1) ? 'highlight' : '' });
           }
         }
       });
